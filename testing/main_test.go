@@ -19,8 +19,10 @@ func Test_toTen(t *testing.T) {
 	}{
 		{
 			name: "toTen Successful",
-			args: args{1},
-			want: 10,
+			args: args{
+				1,
+			},
+			want: 0,
 		},
 	}
 	// for each of the tests above, run them and compare the inputs
