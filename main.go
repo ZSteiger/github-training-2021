@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// this is a person
 type person struct {
 	name string
 	age  int
