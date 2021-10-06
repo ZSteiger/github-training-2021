@@ -15,9 +15,9 @@ func Test_toTen(t *testing.T) {
 	}{
 		{
 			name: "toTen Successful",
-			args: 1,
-			want: 10
-		}, 
+			args: args{1},
+			want: 10,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
