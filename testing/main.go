@@ -23,5 +23,6 @@ func toTen(starterInt int) int {
 		starterInt = starterInt + 1
 	}
 	// return it from the function to be used in main()
+	fmt.Printf("Starter Int before Return: %v\n", starterInt)
 	return starterInt
 }
