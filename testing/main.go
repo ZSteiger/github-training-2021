@@ -16,7 +16,7 @@ func main() {
 func toTen(starterInt int) int {
 	// take in variable starterInt,
 	// if i is less than 10
-	for starterInt <= 10 {
+	for starterInt < 10 {
 		// print its current value
 		fmt.Println(starterInt)
 		// increment it by one then reassign it the startInt variable
