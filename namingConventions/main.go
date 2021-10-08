@@ -36,7 +36,7 @@ func (circ circle) perimeter() float64 {
 	return 2 * math.Pi * circ.radius
 }
 
-func takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(asdfghjkl geometry) {
+func PrintAreaandPerm(shape geometry) {
 	switch time.Now().Weekday() {
 	case time.Friday:
 		fmt.Println("Today is the day 😎")
@@ -44,9 +44,9 @@ func takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBa
 		fmt.Println("Keep dreaming 😭")
 	}
 
-	fmt.Printf("Result: %v", asdfghjkl)
-	fmt.Printf("Area: %v", asdfghjkl.area())
-	fmt.Printf("Perimeter: %v", asdfghjkl.perimeter())
+	fmt.Printf("Result: %v", shape)
+	fmt.Printf("Area: %v", shape.area())
+	fmt.Printf("Perimeter: %v", shape.perimeter())
 }
 
 func sundayChores(hamper []string) {
@@ -61,8 +61,8 @@ func main() {
 	area := quadrilateral{width: 3, height: 4}
 	perimeter := circle{radius: 5}
 
-	takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(area)
-	takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(perimeter)
+	PrintAreaandPerm(area)
+	PrintAreaandPerm(perimeter)
 
 	dirtyLaundry := []string{"underwear", "socks", "old tshirts", "work shorts", "facemask"}
 	sundayChores(dirtyLaundry)
