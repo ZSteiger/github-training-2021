@@ -7,36 +7,36 @@ import (
 	"time"
 )
 
-type fancyShapeArithmetic interface {
-	insidebits() float64
-	outerbounds() float64
+type shapeInterface interface {
+	getArea() float64
+	getPerimeter() float64
 }
 
-type multi_sided_quadrilateral struct {
-	theSides, howTallAmI float64
+type quadrilateral struct {
+	width, height float64
 }
 
-type idk struct {
-	halfThe_diameter float64
+type circle struct {
+	radius float64
 }
 
-func (instantiated_multi_sided_quadrilateral multi_sided_quadrilateral) insidebits() float64 {
-	return instantiated_multi_sided_quadrilateral.theSides * instantiated_multi_sided_quadrilateral.howTallAmI
+func (varQuadrilateral quadrilateral) getArea() float64 {
+	return varQuadrilateral.width * varQuadrilateral.height
 }
 
-func (shape multi_sided_quadrilateral) outerbounds() float64 {
-	return 2*shape.theSides + 2*shape.howTallAmI
+func (shape quadrilateral) getPerimeter() float64 {
+	return 2*shape.width + 2*shape.height
 }
 
-func (fuckCircles idk) insidebits() float64 {
-	return math.Pi * fuckCircles.halfThe_diameter * fuckCircles.halfThe_diameter
+func (varCircle circle) getArea() float64 {
+	return math.Pi * varCircle.radius * varCircle.radius
 }
 
-func (what idk) outerbounds() float64 {
-	return 2 * math.Pi * what.halfThe_diameter
+func (varCircle circle) getPerimeter() float64 {
+	return 2 * math.Pi * varCircle.radius
 }
 
-func takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(asdfghjkl fancyShapeArithmetic) {
+func printshapeInterface(varShape shapeInterface) {
 	switch time.Now().Weekday() {
 	case time.Friday:
 		fmt.Println("Today is the day 😎")
@@ -44,12 +44,12 @@ func takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBa
 		fmt.Println("Keep dreaming 😭")
 	}
 
-	fmt.Printf("Result: %v", asdfghjkl)
-	fmt.Printf("Area: %v", asdfghjkl.insidebits())
-	fmt.Printf("Perimeter: %v", asdfghjkl.outerbounds())
+	fmt.Printf("Result: %v", varShape)
+	fmt.Printf("getArea: %v", varShape.getArea())
+	fmt.Printf("getPerimeter: %v", varShape.getPerimeter())
 }
 
-func sundayChores(hamper []string) {
+func printChores(hamper []string) {
 	sort.Strings(hamper)
 	fmt.Println(hamper)
 }
@@ -58,12 +58,12 @@ func sundayChores(hamper []string) {
 // no need to rename them
 func main() {
 
-	msq := multi_sided_quadrilateral{theSides: 3, howTallAmI: 4}
-	istilldontknow := idk{halfThe_diameter: 5}
+	outRectangle := quadrilateral{width: 3, height: 4}
+	outCircle := circle{radius: 5}
 
-	takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(msq)
-	takeTheInternalMeasurementsOfTheItemInQuestionAndReportBackTheResultOfTheBasicOperandsNecessaryForDeterminingTheCode(istilldontknow)
+	printshapeInterface(outRectangle)
+	printshapeInterface(outCircle)
 
 	dirty_laundry := []string{"underwear", "socks", "old tshirts", "work shorts", "facemask"}
-	sundayChores(dirty_laundry)
+	printChores(dirty_laundry)
 }
